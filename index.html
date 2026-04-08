@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>THADEF AUTOS - Clean Foreign Used Cars</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="premium-styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="page-enter">
   <!-- Header -->
@@ -31,37 +31,40 @@
   <!-- Hero Section with Slideshow -->
   <section class="hero">
     <div class="hero-slideshow">
-      <!-- Slide 1 -->
+      <!-- Slide 1 - Premium Car Image -->
       <div class="hero-slide active">
-        <img src="images/toyota_camry_2017/IMG_2003.jpeg" alt="Toyota Camry 2017">
+        <img src="https://images.unsplash.com/photo-1617531653332-bd46c24f2068?w=1920&q=80" alt="Premium Foreign Used Car">
       </div>
-      <!-- Slide 2 -->
+      <!-- Slide 2 - Luxury Sedan -->
       <div class="hero-slide">
-        <img src="images/lexus_ES_350_2013/IMG_2085.jpeg" alt="Lexus ES 350 2013">
+        <img src="https://images.unsplash.com/photo-1550355291-bbee04a92027?w=1920&q=80" alt="Luxury Sedan">
       </div>
-      <!-- Slide 3 -->
+      <!-- Slide 3 - Toyota Showcase -->
       <div class="hero-slide">
-        <img src="images/toyota_camry_2010/IMG_2068.jpeg" alt="Toyota Camry 2010">
+        <img src="https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=1920&q=80" alt="Toyota Showcase">
       </div>
-      <!-- Slide 4 -->
+      <!-- Slide 4 - Car Interior -->
       <div class="hero-slide">
-        <img src="images/lexus_ES_350_2008/IMG_1954.jpeg" alt="Lexus ES 350 2008">
+        <img src="https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=1920&q=80" alt="Premium Car Interior">
       </div>
-      <!-- Slide 5 -->
+      <!-- Slide 5 - Car Display -->
       <div class="hero-slide">
-        <img src="images/toyota_corolla_2014/IMG_1982.jpeg" alt="Toyota Corolla 2014">
+        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1920&q=80" alt="Luxury Car Display">
       </div>
-      <!-- Slide 6 -->
+      <!-- Slide 6 - Clean Foreign Car -->
       <div class="hero-slide">
-        <img src="images/pontiac_vibe_2011/IMG_2072.jpeg" alt="Pontiac Vibe 2011">
+        <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=1920&q=80" alt="Clean Foreign Used Car">
       </div>
       <div class="hero-overlay"></div>
     </div>
 
     <div class="hero-content">
-      <h1>Clean Foreign Used Cars <span>You Can Trust</span></h1>
-      <p>Quality vehicles from THADEF AUTOS - Your trusted dealer for premium foreign used cars in excellent condition.</p>
-      <div class="hero-buttons">
+      <h1 class="hero-title-animate">
+        <span class="hero-line">Clean Foreign Used Cars</span>
+        <span class="hero-line highlight">You Can Trust</span>
+      </h1>
+      <p class="hero-subtitle-animate">Quality vehicles from THADEF AUTOS - Your trusted dealer for premium foreign used cars in excellent condition.</p>
+      <div class="hero-buttons hero-buttons-animate">
         <a href="listings.html" class="btn btn-primary">View Cars</a>
         <a href="https://wa.me/2349110138677" class="btn btn-whatsapp">Chat on WhatsApp</a>
       </div>
@@ -81,21 +84,25 @@
   <!-- Trust Section -->
   <section class="trust-section">
     <div class="container">
+      <div class="section-header">
+        <span class="subtitle">Why Choose Us</span>
+        <h2>Built on Trust</h2>
+      </div>
       <div class="trust-grid">
         <div class="trust-item">
           <div class="trust-icon">🚗</div>
-          <h3>Foreign Used Vehicles</h3>
-          <p>Direct imports from trusted sources</p>
+          <h3>Premium Imports</h3>
+          <p>Direct imports from trusted international sources with verified history</p>
         </div>
         <div class="trust-item">
           <div class="trust-icon">✨</div>
-          <h3>Neat Condition Guaranteed</h3>
-          <p>Every car thoroughly inspected</p>
+          <h3>Quality Assured</h3>
+          <p>Every vehicle thoroughly inspected and detailed to perfection</p>
         </div>
         <div class="trust-item">
           <div class="trust-icon">🤝</div>
-          <h3>Trusted Dealer</h3>
-          <p>Years of satisfied customers</p>
+          <h3>Customer First</h3>
+          <p>Dedicated support and transparent dealings with every transaction</p>
         </div>
       </div>
     </div>
@@ -105,8 +112,9 @@
   <section class="featured-section">
     <div class="container">
       <div class="section-header">
+        <span class="subtitle">Our Collection</span>
         <h2>Featured Cars</h2>
-        <p>Handpicked premium foreign used vehicles</p>
+        <p>Handpicked premium foreign used vehicles in excellent condition</p>
       </div>
       <div class="car-grid">
         <!-- Car 1 -->
@@ -244,7 +252,6 @@
     // Hero Slideshow
     const slides = document.querySelectorAll('.hero-slide');
     const dots = document.querySelectorAll('.hero-dot');
-    const heroContent = document.querySelector('.hero-content');
     let currentSlide = 0;
     let slideInterval;
 
@@ -254,10 +261,6 @@
       
       slides[index].classList.add('active');
       dots[index].classList.add('active');
-      
-      // Animate content
-      heroContent.classList.remove('active');
-      setTimeout(() => heroContent.classList.add('active'), 300);
       
       currentSlide = index;
     }
@@ -272,15 +275,12 @@
       dot.addEventListener('click', () => {
         clearInterval(slideInterval);
         showSlide(parseInt(dot.dataset.slide));
-        slideInterval = setInterval(nextSlide, 5000);
+        slideInterval = setInterval(nextSlide, 6000);
       });
     });
 
     // Start slideshow
-    setTimeout(() => {
-      heroContent.classList.add('active');
-    }, 500);
-    slideInterval = setInterval(nextSlide, 5000);
+    slideInterval = setInterval(nextSlide, 6000);
 
     // Intersection Observer for animations
     const observerOptions = {
