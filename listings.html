@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Cars - THADEF AUTOS</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="page-enter">
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <span class="logo-text">THADEF <span>AUTOS</span></span>
+        </a>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="listings.html">Cars</a></li>
+          </ul>
+        </nav>
+        <div class="header-cta">
+          <a href="https://wa.me/2349110138677" class="btn btn-whatsapp">Chat on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>All Available Cars</h1>
+      <p>Browse our collection of quality foreign used vehicles</p>
+    </div>
+  </section>
+
+  <!-- Search Section -->
+  <section class="search-section">
+    <div class="container">
+      <form class="search-form" onsubmit="return false;">
+        <input type="text" class="search-input" placeholder="Search by car name or year..." id="searchInput">
+        <button type="submit" class="search-btn" onclick="filterCars()">Search</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Listings -->
+  <section class="listings-section">
+    <div class="container">
+      <div class="car-grid" id="carGrid">
+        <!-- Car 1 -->
+        <div class="car-card">
+          <div class="car-image">
+            <img src="images/lexus_ES_350_2008/IMG_1954.jpeg" alt="Lexus ES 350 2008">
+            <span class="car-badge badge-foreign">Foreign Used</span>
+            <span class="car-badge badge-neat">Neat Condition</span>
+          </div>
+          <div class="car-info">
+            <h3 class="car-title">Lexus ES 350 2008</h3>
+            <p class="car-price">₦11.5M</p>
+            <a href="details-lexus-es350-2008.html" class="car-btn">View Details</a>
+          </div>
+        </div>
+        <!-- Car 2 -->
+        <div class="car-card">
+          <div class="car-image">
+            <img src="images/TOYOTO_CAMRY_2010_comes_with_venza_engine/IMG_2068.jpeg" alt="Toyota Camry 2010">
+            <span class="car-badge badge-foreign">Foreign Used</span>
+            <span class="car-badge badge-neat">Neat Condition</span>
+          </div>
+          <div class="car-info">
+            <h3 class="car-title">Toyota Camry 2010</h3>
+            <p class="car-price">₦12M</p>
+            <a href="details-toyota-camry-2010.html" class="car-btn">View Details</a>
+          </div>
+        </div>
+        <!-- Car 3 -->
+        <div class="car-card">
+          <div class="car-image">
+            <img src="images/toyota_camry_2008/IMG_2017.jpeg" alt="Toyota Camry 2008">
+            <span class="car-badge badge-foreign">Foreign Used</span>
+            <span class="car-badge badge-neat">Neat Condition</span>
+          </div>
+          <div class="car-info">
+            <h3 class="car-title">Toyota Camry 2008</h3>
+            <p class="car-price">₦9.8M</p>
+            <a href="details-toyota-camry-2008.html" class="car-btn">View Details</a>
+          </div>
+        </div>
+        <!-- Car 4 -->
+        <div class="car-card">
+          <div class="car-image">
+            <img src="images/pontiac_vibe_2011/IMG_2072.jpeg" alt="Pontiac Vibe 2011">
+            <span class="car-badge badge-foreign">Foreign Used</span>
+            <span class="car-badge badge-neat">Neat Condition</span>
+          </div>
+          <div class="car-info">
+            <h3 class="car-title">Pontiac Vibe 2011</h3>
+            <p class="car-price">₦10.4M</p>
+            <a href="details-pontiac-vibe-2011.html" class="car-btn">View Details</a>
+          </div>
+        </div>
+        <!-- Car 5 -->
+        <div class="car-card">
+          <div class="car-image">
+            <img src="images/Nissan_Micra_2015/IMG_2095.jpeg" alt="Nissan Micra 2015">
+            <span class="car-badge badge-foreign">Foreign Used</span>
+            <span class="car-badge badge-neat">Neat Condition</span>
+          </div>
+          <div class="car-info">
+            <h3 class="car-title">Nissan Micra 2015</h3>
+            <p class="car-price">₦11M</p>
+            <a href="details-nissan-micra-2015.html" class="car-btn">View Details</a>
+          </div>
+        </div>
+        <!-- Car 6 -->
+        <div class="car-card">
+          <div class="car-image">
+            <img src="images/Toyota_corolla_Sport_2008/IMG_2029.jpeg" alt="Toyota Corolla Sport 2008">
+            <span class="car-badge badge-foreign">Foreign Used</span>
+            <span class="car-badge badge-neat">Neat Condition</span>
+          </div>
+          <div class="car-info">
+            <h3 class="car-title">Toyota Corolla Sport 2008</h3>
+            <p class="car-price">₦10.7M</p>
+            <a href="details-toyota-corolla-sport-2008.html" class="car-btn">View Details</a>
+          </div>
+        </div>
+        <!-- Car 7 -->
+        <div class="car-card">
+          <div class="car-image">
+            <img src="images/Toyota_corolla_sport_2011/IMG_1969.jpeg" alt="Toyota Corolla 2011">
+            <span class="car-badge badge-foreign">Foreign Used</span>
+            <span class="car-badge badge-neat">Neat Condition</span>
+          </div>
+          <div class="car-info">
+            <h3 class="car-title">Toyota Corolla 2011</h3>
+            <p class="car-price">₦11.5M</p>
+            <a href="details-toyota-corolla-2011.html" class="car-btn">View Details</a>
+          </div>
+        </div>
+        <!-- Car 8 -->
+        <div class="car-card">
+          <div class="car-image">
+            <img src="images/Lexus_IS_250_2008/IMG_2057.jpeg" alt="Lexus IS 250 2008">
+            <span class="car-badge badge-foreign">Foreign Used</span>
+            <span class="car-badge badge-neat">Neat Condition</span>
+          </div>
+          <div class="car-info">
+            <h3 class="car-title">Lexus IS 250 2008</h3>
+            <p class="car-price">₦9.5M</p>
+            <a href="details-lexus-is250-2008.html" class="car-btn">View Details</a>
+          </div>
+        </div>
+        <!-- Car 9 -->
+        <div class="car-card">
+          <div class="car-image">
+            <img src="images/toyota_camry_2017/IMG_2003.jpeg" alt="Toyota Camry 2017">
+            <span class="car-badge badge-foreign">Foreign Used</span>
+            <span class="car-badge badge-neat">Neat Condition</span>
+          </div>
+          <div class="car-info">
+            <h3 class="car-title">Toyota Camry 2017</h3>
+            <p class="car-price">₦18M</p>
+            <a href="details-toyota-camry-2017.html" class="car-btn">View Details</a>
+          </div>
+        </div>
+        <!-- Car 10 -->
+        <div class="car-card">
+          <div class="car-image">
+            <img src="images/toyota_corolla_2014/IMG_1982.jpeg" alt="Toyota Corolla 2014">
+            <span class="car-badge badge-foreign">Foreign Used</span>
+            <span class="car-badge badge-neat">Neat Condition</span>
+          </div>
+          <div class="car-info">
+            <h3 class="car-title">Toyota Corolla 2014</h3>
+            <p class="car-price">₦15M</p>
+            <a href="details-toyota-corolla-2014.html" class="car-btn">View Details</a>
+          </div>
+        </div>
+        <!-- Car 11 -->
+        <div class="car-card">
+          <div class="car-image">
+            <img src="images/lexus_ES_350_2013/IMG_2085.jpeg" alt="Lexus ES 350 2013">
+            <span class="car-badge badge-foreign">Foreign Used</span>
+            <span class="car-badge badge-neat">Neat Condition</span>
+          </div>
+          <div class="car-info">
+            <h3 class="car-title">Lexus ES 350 2013</h3>
+            <p class="car-price">₦17.5M</p>
+            <a href="details-lexus-es350-2013.html" class="car-btn">View Details</a>
+          </div>
+        </div>
+        <!-- Car 12 -->
+        <div class="car-card">
+          <div class="car-image">
+            <img src="images/Nissan_Altima_2016/IMG_2038.jpeg" alt="Nissan Altima 2016">
+            <span class="car-badge badge-foreign">Foreign Used</span>
+            <span class="car-badge badge-neat">Neat Condition</span>
+          </div>
+          <div class="car-info">
+            <h3 class="car-title">Nissan Altima 2016</h3>
+            <p class="car-price">₦10.6M</p>
+            <a href="details-nissan-altima-2016.html" class="car-btn">View Details</a>
+          </div>
+        </div>
+        <!-- Car 13 -->
+        <div class="car-card">
+          <div class="car-image">
+            <img src="images/Akura_2013/IMG_1985.jpeg" alt="Akura 2013">
+            <span class="car-badge badge-foreign">Foreign Used</span>
+            <span class="car-badge badge-neat">Neat Condition</span>
+          </div>
+          <div class="car-info">
+            <h3 class="car-title">Akura 2013</h3>
+            <p class="car-price">₦11M</p>
+            <a href="details-akura-2013.html" class="car-btn">View Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Can't Find What You're Looking For?</h2>
+      <p>Contact us and we'll help you find the perfect car</p>
+      <div class="cta-buttons">
+        <a href="tel:+2348034768934" class="btn btn-primary">Call Now</a>
+        <a href="https://wa.me/2349110138677" class="btn btn-whatsapp">Chat on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3>THADEF AUTOS</h3>
+          <p>Your trusted dealer for clean foreign used cars.</p>
+        </div>
+        <div>
+          <h3>Contact Us</h3>
+          <a href="tel:+2348034768934">08034768934</a>
+          <a href="tel:+2349110138677">09110138677</a>
+        </div>
+        <div>
+          <h3>Follow Us</h3>
+          <p>@ThadefAutos</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 THADEF AUTOS. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <div class="floating-whatsapp">
+    <a href="https://wa.me/2349110138677" target="_blank">💬</a>
+  </div>
+
+  <script>
+    // Filter cars by search
+    function filterCars() {
+      const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+      const cards = document.querySelectorAll('.car-card');
+      
+      cards.forEach(card => {
+        const title = card.querySelector('.car-title').textContent.toLowerCase();
+        if (title.includes(searchTerm)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    document.getElementById('searchInput').addEventListener('keyup', filterCars);
+
+    // Intersection Observer for card animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 100);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.car-card').forEach(card => {
+      observer.observe(card);
+    });
+  </script>
+</body>
+</html>
