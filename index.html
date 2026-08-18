@@ -8,6 +8,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="page-enter">
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-logo">
+        <img src="./images/Thadef.png" alt="THADEF AUTOS">
+      </div>
+      <div class="preloader-bar"><span></span></div>
+      <p class="preloader-text">Loading THADEF AUTOS</p>
+    </div>
+  </div>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
   <!-- Header -->
   <header class="header">
     <div class="container">
@@ -19,6 +34,7 @@
           <ul class="nav-links" id="primaryNav">
             <li><a href="index.html">Home</a></li>
             <li><a href="listings.html">Cars</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </nav>
         <div class="header-cta">
@@ -35,27 +51,21 @@
   <!-- Hero Section with Slideshow -->
   <section class="hero">
     <div class="hero-slideshow">
-      <!-- Slide 1 - Toyota Camry -->
       <div class="hero-slide active">
         <img src="https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=1920&q=80" alt="Toyota Camry">
       </div>
-      <!-- Slide 2 - Mercedes Luxury -->
       <div class="hero-slide">
         <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=1920&q=80" alt="Mercedes Benz">
       </div>
-      <!-- Slide 3 - Nissan -->
       <div class="hero-slide">
         <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=1920&q=80" alt="Nissan">
       </div>
-      <!-- Slide 4 - Toyota SUV -->
       <div class="hero-slide">
         <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=1920&q=80" alt="Toyota SUV">
       </div>
-      <!-- Slide 5 - Luxury Sedan -->
       <div class="hero-slide">
         <img src="https://images.unsplash.com/photo-1549317661-bd32c24f2068?w=1920&q=80" alt="Luxury Car">
       </div>
-      <!-- Slide 6 - Toyota Highlander -->
       <div class="hero-slide">
         <img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=1920&q=80" alt="Toyota Highlander">
       </div>
@@ -63,15 +73,14 @@
     </div>
 
     <div class="hero-content">
-      <h1>Clean Foreign Used Cars <span>You Can Trust</span></h1>
-      <p>Quality vehicles from THADEF AUTOS - Your trusted dealer for premium foreign used cars in excellent condition.</p>
+      <h1>Clean Foreign Used Cars<br><span class="hero-type-wrap"><span class="hero-type" id="heroType"></span><span class="type-cursor">|</span></span></h1>
+      <p>Quality vehicles from THADEF AUTOS — direct clean imports from Canada. Your trusted dealer for premium foreign used cars, delivered nationwide.</p>
       <div class="hero-buttons">
         <a href="listings.html" class="btn btn-primary">View Cars</a>
         <a href="https://wa.me/2349110138677" class="btn btn-whatsapp">Chat on WhatsApp</a>
       </div>
     </div>
 
-    <!-- Navigation Dots -->
     <div class="hero-dots">
       <span class="hero-dot active" data-slide="0"></span>
       <span class="hero-dot" data-slide="1"></span>
@@ -79,6 +88,28 @@
       <span class="hero-dot" data-slide="3"></span>
       <span class="hero-dot" data-slide="4"></span>
       <span class="hero-dot" data-slide="5"></span>
+    </div>
+  </section>
+
+  <!-- Brands Marquee -->
+  <section class="brands-marquee">
+    <div class="marquee-track">
+      <span class="marquee-item">Toyota</span>
+      <span class="marquee-item">Lexus</span>
+      <span class="marquee-item">Honda</span>
+      <span class="marquee-item">Nissan</span>
+      <span class="marquee-item">Mercedes-Benz</span>
+      <span class="marquee-item">BMW</span>
+      <span class="marquee-item">Acura</span>
+      <span class="marquee-item">Hyundai</span>
+      <span class="marquee-item">Toyota</span>
+      <span class="marquee-item">Lexus</span>
+      <span class="marquee-item">Honda</span>
+      <span class="marquee-item">Nissan</span>
+      <span class="marquee-item">Mercedes-Benz</span>
+      <span class="marquee-item">BMW</span>
+      <span class="marquee-item">Acura</span>
+      <span class="marquee-item">Hyundai</span>
     </div>
   </section>
 
@@ -91,7 +122,7 @@
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 11l1.5-4.5A2 2 0 0 1 8.4 5h7.2a2 2 0 0 1 1.9 1.5L19 11"/><path d="M3 11h18v6a1 1 0 0 1-1 1h-1a2 2 0 0 1-4 0H9a2 2 0 0 1-4 0H4a1 1 0 0 1-1-1z"/><path d="M7 14h.01M17 14h.01"/></svg>
           </div>
           <h3>Foreign Used Vehicles</h3>
-          <p>Direct imports from trusted sources</p>
+          <p>Direct clean imports from Canada</p>
         </div>
         <div class="trust-item">
           <div class="trust-icon">
@@ -102,10 +133,102 @@
         </div>
         <div class="trust-item">
           <div class="trust-icon">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 17a4 4 0 0 0 8 0"/><path d="M7 11a4 4 0 0 1 0 6"/><path d="M3 8h13a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6"/><path d="M3 8l2-3M3 8l2 3"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8h13a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6"/><path d="M3 8l2-3M3 8l2 3"/></svg>
           </div>
-          <h3>Trusted Dealer</h3>
-          <p>Years of satisfied customers</p>
+          <h3>Nationwide Delivery</h3>
+          <p>We deliver anywhere in Nigeria</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number"><span class="stat-count" data-target="20">0</span><span class="stat-suffix">+</span></div>
+          <div class="stat-label">Cars Sold</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number"><span class="stat-count" data-target="20">0</span><span class="stat-suffix">+</span></div>
+          <div class="stat-label">Happy Customers</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number"><span class="stat-count" data-target="100">0</span><span class="stat-suffix">%</span></div>
+          <div class="stat-label">Neat Condition</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number"><span class="stat-count" data-target="36">0</span><span class="stat-suffix">+</span></div>
+          <div class="stat-label">States Served</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=1200&q=80" alt="THADEF AUTOS Showroom">
+          <div class="about-badge">
+            <strong>Canada</strong>
+            <span>Direct Imports</span>
+          </div>
+        </div>
+        <div class="about-content">
+          <span class="subtitle">Who We Are</span>
+          <h2>Premium Foreign Used Cars, Nationwide</h2>
+          <p>THADEF AUTOS specializes in clean, foreign used vehicles — carefully selected direct imports from Canada. Every car is inspected, verified, and delivered in neat condition you can trust.</p>
+          <p>From Lagos to every state in Nigeria, we make owning a quality foreign used car simple, transparent, and reliable. No stories, just clean cars.</p>
+          <ul class="about-features">
+            <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Direct clean imports from Canada</li>
+            <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Thoroughly inspected before delivery</li>
+            <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Nationwide delivery across Nigeria</li>
+            <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Transparent pricing, no hidden fees</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="subtitle">What We Offer</span>
+        <h2>Our Services</h2>
+        <p>Everything you need to own your dream car with confidence</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M3 7h18v10H3z"/><path d="M3 12h18"/><path d="M7 7V5h10v2"/></svg>
+          </div>
+          <h3>Vehicle Inspection</h3>
+          <p>Every car is mechanically and cosmetically inspected before it reaches you.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h3>Flexible Financing</h3>
+          <p>Easy payment plans and bank-assisted financing to suit your budget.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <h3>Nationwide Delivery</h3>
+          <p>We deliver your clean car safely to any state across Nigeria.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Warranty Support</h3>
+          <p>Peace of mind with after-sales support on selected vehicles.</p>
         </div>
       </div>
     </div>
@@ -119,13 +242,13 @@
         <p>Handpicked premium foreign used vehicles</p>
       </div>
       <div class="car-grid">
-        <!-- Car 1 -->
         <div class="car-card">
           <div class="car-image">
-<img src="images/lexus_ES_350_2008/IMG_1954.jpeg" alt="Lexus ES 350 2008">
-  <span class="car-badge badge-foreign">Foreign Used</span>
-  <span class="car-badge badge-neat">Neat Condition</span>
-  <span class="car-badge badge-sold">SOLD</span>
+            <img src="images/lexus_ES_350_2008/IMG_1954.jpeg" alt="Lexus ES 350 2008">
+            <div class="tilt-glow"></div>
+            <span class="car-badge badge-foreign">Foreign Used</span>
+            <span class="car-badge badge-neat">Neat Condition</span>
+            <span class="car-badge badge-sold">SOLD</span>
           </div>
           <div class="car-info">
             <h3 class="car-title">Lexus ES 350 2008</h3>
@@ -133,10 +256,10 @@
             <a href="details-lexus-es350-2008.html" class="car-btn">View Details</a>
           </div>
         </div>
-        <!-- Car 2 -->
         <div class="car-card">
           <div class="car-image">
             <img src="images/toyota_camry_2010/IMG_2068.jpeg" alt="Toyota Camry 2010">
+            <div class="tilt-glow"></div>
             <span class="car-badge badge-foreign">Foreign Used</span>
             <span class="car-badge badge-neat">Neat Condition</span>
             <span class="car-badge badge-sold">SOLD</span>
@@ -147,10 +270,10 @@
             <a href="details-toyota-camry-2010.html" class="car-btn">View Details</a>
           </div>
         </div>
-        <!-- Car 3 -->
         <div class="car-card">
           <div class="car-image">
             <img src="images/toyota_camry_2008/IMG_2017.jpeg" alt="Toyota Camry 2008">
+            <div class="tilt-glow"></div>
             <span class="car-badge badge-foreign">Foreign Used</span>
             <span class="car-badge badge-neat">Neat Condition</span>
             <span class="car-badge badge-sold">SOLD</span>
@@ -161,10 +284,10 @@
             <a href="details-toyota-camry-2008.html" class="car-btn">View Details</a>
           </div>
         </div>
-        <!-- Car 4 -->
         <div class="car-card">
           <div class="car-image">
             <img src="images/pontiac_vibe_2011/IMG_2072.jpeg" alt="Pontiac Vibe 2011">
+            <div class="tilt-glow"></div>
             <span class="car-badge badge-foreign">Foreign Used</span>
             <span class="car-badge badge-neat">Neat Condition</span>
             <span class="car-badge badge-sold">SOLD</span>
@@ -175,10 +298,10 @@
             <a href="details-pontiac-vibe-2011.html" class="car-btn">View Details</a>
           </div>
         </div>
-        <!-- Car 5 -->
         <div class="car-card">
           <div class="car-image">
             <img src="images/nissan_micra_2015/IMG_2095.jpeg" alt="Nissan Micra 2015">
+            <div class="tilt-glow"></div>
             <span class="car-badge badge-foreign">Foreign Used</span>
             <span class="car-badge badge-neat">Neat Condition</span>
           </div>
@@ -188,10 +311,10 @@
             <a href="details-nissan-micra-2015.html" class="car-btn">View Details</a>
           </div>
         </div>
-        <!-- Car 6 -->
         <div class="car-card">
           <div class="car-image">
             <img src="images/toyota_corolla_sport_2008/IMG_2029.jpeg" alt="Toyota Corolla Sport 2008">
+            <div class="tilt-glow"></div>
             <span class="car-badge badge-foreign">Foreign Used</span>
             <span class="car-badge badge-neat">Neat Condition</span>
             <span class="car-badge badge-sold">SOLD</span>
@@ -209,6 +332,52 @@
     </div>
   </section>
 
+  <!-- Testimonials -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="subtitle">Happy Customers</span>
+        <h2>What Our Clients Say</h2>
+        <p>Real experiences from drivers across Nigeria</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Got my Toyota Camry in perfect neat condition just as described. Delivery to Abuja was smooth and on time. THADEF is the real deal."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">EO</div>
+            <div>
+              <h4>Emmanuel O.</h4>
+              <span>Abuja</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"The Lexus I bought was a clean Canada import, no stories. Customer care was honest and patient. Highly recommend THADEF AUTOS."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">AC</div>
+            <div>
+              <h4>Amara C.</h4>
+              <span>Lagos</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"I was skeptical about buying used, but the inspection report and warranty support gave me confidence. Best car decision I've made."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">IO</div>
+            <div>
+              <h4>Ibrahim O.</h4>
+              <span>Port Harcourt</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA Section -->
   <section class="cta-section">
     <div class="container">
@@ -222,25 +391,47 @@
     </div>
   </section>
 
+  <!-- Newsletter -->
+  <section class="newsletter-section">
+    <div class="container">
+      <div class="newsletter-inner">
+        <h2>Never Miss a New Arrival</h2>
+        <p>Subscribe to get the latest clean foreign used cars delivered to your inbox.</p>
+        <form class="newsletter-form" id="newsletterForm" onsubmit="return false;">
+          <input type="email" class="newsletter-input" id="newsletterEmail" placeholder="Enter your email address" required>
+          <button type="submit" class="btn btn-primary" id="newsletterBtn">Subscribe</button>
+        </form>
+        <p class="newsletter-msg" id="newsletterMsg"></p>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
           <img src="./images/Thadef.png" alt="THADEF AUTOS" class="footer-logo">
-          <p>Your trusted dealer for clean foreign used cars. Quality vehicles at competitive prices.</p>
+          <p>Your trusted dealer for clean foreign used cars. Direct imports from Canada, delivered nationwide.</p>
+          <form class="footer-newsletter" id="footerNewsletter" onsubmit="return false;">
+            <input type="email" class="newsletter-input" id="footerEmail" placeholder="Subscribe for new arrivals" required style="margin-bottom:14px;">
+            <button type="submit" class="btn btn-outline" style="width:100%;">Subscribe</button>
+          </form>
+          <p class="newsletter-msg" id="footerNewsletterMsg" style="text-align:left;"></p>
         </div>
         <div class="footer-contact">
           <h3>Contact Us</h3>
           <a href="tel:+2348034768934">📞 08034768934</a>
           <a href="tel:+2349063885910">📞 09063885910</a>
           <a href="https://wa.me/2349110138677">💬 WhatsApp: 09110138677</a>
+          <a href="mailto:thadefautos@gmail.com">✉️ thadefautos@gmail.com</a>
         </div>
         <div class="footer-social">
           <h3>Follow Us</h3>
           <p>@ThadefAutos</p>
           <div class="social-links">
             <a href="https://instagram.com/thadefautos" class="social-link" target="_blank">IG</a>
+            <a href="https://wa.me/2349110138677" class="social-link" target="_blank">WA</a>
           </div>
         </div>
       </div>
@@ -255,8 +446,54 @@
     <a href="https://wa.me/2349110138677" target="_blank">💬</a>
   </div>
 
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
   <script>
-    // Hero Slideshow
+    // ===== Preloader =====
+    window.addEventListener('load', () => {
+      const pre = document.getElementById('preloader');
+      setTimeout(() => pre.classList.add('hide'), 600);
+    });
+
+    // ===== Scroll Progress + Back to Top =====
+    const scrollProgress = document.getElementById('scrollProgress');
+    const backToTop = document.getElementById('backToTop');
+    function onScroll() {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      scrollProgress.style.width = pct + '%';
+      backToTop.classList.toggle('show', scrollTop > 500);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // ===== Hero Typewriter =====
+    const heroPhrases = ['You Can Trust', 'In Neat Condition', 'Delivered Nationwide', 'From Canada'];
+    const heroTypeEl = document.getElementById('heroType');
+    let heroPhraseIdx = 0, heroCharIdx = 0, heroDeleting = false;
+    function heroTypeLoop() {
+      const phrase = heroPhrases[heroPhraseIdx];
+      heroTypeEl.textContent = phrase.substring(0, heroCharIdx);
+      if (!heroDeleting && heroCharIdx < phrase.length) {
+        heroCharIdx++;
+        setTimeout(heroTypeLoop, 90);
+      } else if (heroDeleting && heroCharIdx > 0) {
+        heroCharIdx--;
+        setTimeout(heroTypeLoop, 45);
+      } else if (!heroDeleting && heroCharIdx === phrase.length) {
+        heroDeleting = true;
+        setTimeout(heroTypeLoop, 1600);
+      } else {
+        heroDeleting = false;
+        heroPhraseIdx = (heroPhraseIdx + 1) % heroPhrases.length;
+        setTimeout(heroTypeLoop, 350);
+      }
+    }
+    heroTypeLoop();
+
+    // ===== Hero Slideshow =====
     const slides = document.querySelectorAll('.hero-slide');
     const dots = document.querySelectorAll('.hero-dot');
     const heroContent = document.querySelector('.hero-content');
@@ -266,23 +503,15 @@
     function showSlide(index) {
       slides.forEach(slide => slide.classList.remove('active'));
       dots.forEach(dot => dot.classList.remove('active'));
-      
       slides[index].classList.add('active');
       dots[index].classList.add('active');
-      
-      // Animate content
       heroContent.classList.remove('active');
       setTimeout(() => heroContent.classList.add('active'), 300);
-      
       currentSlide = index;
     }
-
     function nextSlide() {
-      const next = (currentSlide + 1) % slides.length;
-      showSlide(next);
+      showSlide((currentSlide + 1) % slides.length);
     }
-
-    // Dot navigation
     dots.forEach(dot => {
       dot.addEventListener('click', () => {
         clearInterval(slideInterval);
@@ -290,58 +519,103 @@
         slideInterval = setInterval(nextSlide, 5000);
       });
     });
-
-    // Start slideshow
-    setTimeout(() => {
-      heroContent.classList.add('active');
-    }, 500);
+    setTimeout(() => heroContent.classList.add('active'), 500);
     slideInterval = setInterval(nextSlide, 5000);
 
-    // Intersection Observer for animations
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
+    // ===== Reveal Animations =====
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
         }
       });
     }, observerOptions);
 
-     // Observe trust items and car cards
-     document.querySelectorAll('.trust-item, .car-card').forEach((el, index) => {
-       el.style.transitionDelay = `${index * 0.1}s`;
-       observer.observe(el);
-     });
+    document.querySelectorAll('.trust-item, .car-card, .stat-item, .service-card, .testimonial-card, .about-content, .about-image').forEach((el, i) => {
+      el.style.transitionDelay = (i % 4) * 0.1 + 's';
+      observer.observe(el);
+    });
 
-     // Mobile navigation
-     const navToggle = document.querySelector('.nav-toggle');
-     const navLinks = document.getElementById('primaryNav');
-     const navBackdrop = document.getElementById('navBackdrop');
+    // ===== Stats Counter =====
+    const statObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.dataset.target);
+          let current = 0;
+          const step = Math.max(1, Math.ceil(target / 60));
+          const timer = setInterval(() => {
+            current += step;
+            if (current >= target) { current = target; clearInterval(timer); }
+            el.textContent = current;
+          }, 25);
+          statObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.stat-count').forEach(el => statObserver.observe(el));
 
-     function closeNav() {
-       navLinks.classList.remove('open');
-       navBackdrop.classList.remove('show');
-       navToggle.setAttribute('aria-expanded', 'false');
-       document.body.style.overflow = '';
-     }
+    // ===== Car Card 3D Tilt =====
+    document.querySelectorAll('.car-card').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const cx = rect.width / 2;
+        const cy = rect.height / 2;
+        const rotX = ((y - cy) / cy) * -6;
+        const rotY = ((x - cx) / cx) * 6;
+        card.style.transform = `perspective(900px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateY(-12px)`;
+        card.style.setProperty('--mx', (x / rect.width * 100) + '%');
+        card.style.setProperty('--my', (y / rect.height * 100) + '%');
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+      });
+    });
 
-     function toggleNav() {
-       const isOpen = navLinks.classList.toggle('open');
-       navBackdrop.classList.toggle('show', isOpen);
-       navToggle.setAttribute('aria-expanded', String(isOpen));
-       document.body.style.overflow = isOpen ? 'hidden' : '';
-     }
+    // ===== Newsletter (WhatsApp deep-link) =====
+    const WA_NUMBER = '2349110138677';
+    function openWhatsApp(text) {
+      window.open('https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(text), '_blank');
+    }
+    function handleNewsletter(formId, msgId) {
+      const form = document.getElementById(formId);
+      const msg = document.getElementById(msgId);
+      form.addEventListener('submit', () => {
+        const email = form.querySelector('input').value;
+        if (!email) return;
+        msg.textContent = '✓ Opening WhatsApp to confirm your subscription...';
+        openWhatsApp('Hello THADEF AUTOS, I would like to subscribe to your new car arrivals.\nEmail: ' + email);
+        form.reset();
+        setTimeout(() => { msg.textContent = '✓ Subscribed! Confirm with us on WhatsApp.'; }, 1500);
+      });
+    }
+    handleNewsletter('newsletterForm', 'newsletterMsg');
+    handleNewsletter('footerNewsletter', 'footerNewsletterMsg');
 
-     navToggle.addEventListener('click', toggleNav);
-     navBackdrop.addEventListener('click', closeNav);
-     navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', closeNav));
-     document.addEventListener('keydown', (e) => {
-       if (e.key === 'Escape') closeNav();
-     });
-   </script>
+    // ===== Mobile navigation =====
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.getElementById('primaryNav');
+    const navBackdrop = document.getElementById('navBackdrop');
+    function closeNav() {
+      navLinks.classList.remove('open');
+      navBackdrop.classList.remove('show');
+      navToggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+    function toggleNav() {
+      const isOpen = navLinks.classList.toggle('open');
+      navBackdrop.classList.toggle('show', isOpen);
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    }
+    navToggle.addEventListener('click', toggleNav);
+    navBackdrop.addEventListener('click', closeNav);
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', closeNav));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeNav(); });
+  </script>
 </body>
 </html>

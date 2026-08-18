@@ -7,12 +7,14 @@
   <link rel="stylesheet" href="premium-styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body><div class="preloader" id="preloader"><div class="preloader-inner"><div class="preloader-logo"><img src="./images/Thadef.png" alt="THADEF AUTOS"></div><div class="preloader-bar"><span></span></div><p class="preloader-text">Loading THADEF AUTOS</p></div></div>
+<div class="scroll-progress" id="scrollProgress"></div>
+
   <header class="header">
     <div class="container">
       <div class="header-inner">
         <a href="index.html" class="logo"><span class="logo-text">THADEF <span>AUTOS</span></span></a>
-        <nav><ul class="nav-links" id="primaryNav"><li><a href="index.html">Home</a></li><li><a href="listings.html">Cars</a></li></ul></nav>
+        <nav><ul class="nav-links" id="primaryNav"><li><a href="index.html">Home</a></li><li><a href="listings.html">Cars</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
         <div class="header-cta"><a href="https://wa.me/2349110138677" class="btn btn-whatsapp">Chat on WhatsApp</a></div>
       </div>
     </div>
@@ -92,5 +94,16 @@
       document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeNav(); });
     })();
     </script>
+<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+<script>
+(function(){
+  var pre=document.getElementById('preloader');
+  window.addEventListener('load',function(){ setTimeout(function(){ if(pre) pre.classList.add('hide'); },500); });
+  var sp=document.getElementById('scrollProgress'), bt=document.getElementById('backToTop');
+  function sc(){ var t=window.scrollY, d=document.documentElement.scrollHeight-window.innerHeight; sp.style.width=(d>0?(t/d)*100:0)+'%'; bt.classList.toggle('show', t>500); }
+  window.addEventListener('scroll', sc, {passive:true});
+  bt.addEventListener('click', function(){ window.scrollTo({top:0,behavior:'smooth'}); });
+})();
+</script>
 </body>
 </html>

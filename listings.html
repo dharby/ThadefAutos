@@ -8,6 +8,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="page-enter">
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-logo">
+        <img src="./images/Thadef.png" alt="THADEF AUTOS">
+      </div>
+      <div class="preloader-bar"><span></span></div>
+      <p class="preloader-text">Loading THADEF AUTOS</p>
+    </div>
+  </div>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
   <!-- Header -->
   <header class="header">
     <div class="container">
@@ -19,6 +34,7 @@
           <ul class="nav-links" id="primaryNav">
             <li><a href="index.html">Home</a></li>
             <li><a href="listings.html">Cars</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </nav>
         <div class="header-cta">
@@ -45,19 +61,62 @@
     <div class="container">
       <form class="search-form" onsubmit="return false;">
         <input type="text" class="search-input" placeholder="Search by car name or year..." id="searchInput">
-        <button type="submit" class="search-btn" onclick="filterCars()">Search</button>
+        <button type="submit" class="search-btn" onclick="applyFilters()">Search</button>
       </form>
     </div>
+  </section>
+
+  <!-- Filters -->
+  <section class="container">
+    <div class="filters-bar">
+      <div class="filter-group">
+        <label for="filterBrand">Brand</label>
+        <select class="filter-select" id="filterBrand">
+          <option value="">All Brands</option>
+          <option value="Toyota">Toyota</option>
+          <option value="Lexus">Lexus</option>
+          <option value="Nissan">Nissan</option>
+          <option value="Honda">Honda</option>
+          <option value="Acura">Acura</option>
+          <option value="Pontiac">Pontiac</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="filterPrice">Price Range</label>
+        <select class="filter-select" id="filterPrice">
+          <option value="">All Prices</option>
+          <option value="0-10">Under ₦10M</option>
+          <option value="10-15">₦10M – ₦15M</option>
+          <option value="15-100">₦15M+</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="filterYear">Year</label>
+        <select class="filter-select" id="filterYear">
+          <option value="">All Years</option>
+          <option value="2008">2008</option>
+          <option value="2010">2010</option>
+          <option value="2011">2011</option>
+          <option value="2013">2013</option>
+          <option value="2014">2014</option>
+          <option value="2015">2015</option>
+          <option value="2016">2016</option>
+          <option value="2017">2017</option>
+        </select>
+      </div>
+      <button class="filter-reset" id="filterReset">Reset Filters</button>
+    </div>
+    <p class="results-count" id="resultsCount"></p>
   </section>
 
   <!-- Listings -->
   <section class="listings-section">
     <div class="container">
       <div class="car-grid" id="carGrid">
-        <!-- Car 1 -->
-        <div class="car-card">
+        <div class="car-card" data-brand="Lexus" data-price="11.5" data-year="2008">
           <div class="car-image">
             <img src="images/lexus_ES_350_2008/IMG_1954.jpeg" alt="Lexus ES 350 2008">
+            <div class="tilt-glow"></div>
             <span class="car-badge badge-foreign">Foreign Used</span>
             <span class="car-badge badge-neat">Neat Condition</span>
             <span class="car-badge badge-sold">SOLD</span>
@@ -68,10 +127,10 @@
             <a href="details-lexus-es350-2008.html" class="car-btn">View Details</a>
           </div>
         </div>
-        <!-- Car 2 -->
-        <div class="car-card">
+        <div class="car-card" data-brand="Toyota" data-price="12" data-year="2010">
           <div class="car-image">
             <img src="images/toyota_camry_2010/IMG_2068.jpeg" alt="Toyota Camry 2010">
+            <div class="tilt-glow"></div>
             <span class="car-badge badge-foreign">Foreign Used</span>
             <span class="car-badge badge-neat">Neat Condition</span>
             <span class="car-badge badge-sold">SOLD</span>
@@ -82,10 +141,10 @@
             <a href="details-toyota-camry-2010.html" class="car-btn">View Details</a>
           </div>
         </div>
-        <!-- Car 3 -->
-        <div class="car-card">
+        <div class="car-card" data-brand="Toyota" data-price="9.8" data-year="2008">
           <div class="car-image">
             <img src="images/toyota_camry_2008/IMG_2017.jpeg" alt="Toyota Camry 2008">
+            <div class="tilt-glow"></div>
             <span class="car-badge badge-foreign">Foreign Used</span>
             <span class="car-badge badge-neat">Neat Condition</span>
             <span class="car-badge badge-sold">SOLD</span>
@@ -96,10 +155,10 @@
             <a href="details-toyota-camry-2008.html" class="car-btn">View Details</a>
           </div>
         </div>
-        <!-- Car 4 -->
-        <div class="car-card">
+        <div class="car-card" data-brand="Pontiac" data-price="10.4" data-year="2011">
           <div class="car-image">
             <img src="images/pontiac_vibe_2011/IMG_2072.jpeg" alt="Pontiac Vibe 2011">
+            <div class="tilt-glow"></div>
             <span class="car-badge badge-foreign">Foreign Used</span>
             <span class="car-badge badge-neat">Neat Condition</span>
             <span class="car-badge badge-sold">SOLD</span>
@@ -110,10 +169,10 @@
             <a href="details-pontiac-vibe-2011.html" class="car-btn">View Details</a>
           </div>
         </div>
-        <!-- Car 5 -->
-        <div class="car-card">
+        <div class="car-card" data-brand="Nissan" data-price="11" data-year="2015">
           <div class="car-image">
             <img src="images/nissan_micra_2015/IMG_2095.jpeg" alt="Nissan Micra 2015">
+            <div class="tilt-glow"></div>
             <span class="car-badge badge-foreign">Foreign Used</span>
             <span class="car-badge badge-neat">Neat Condition</span>
           </div>
@@ -123,10 +182,10 @@
             <a href="details-nissan-micra-2015.html" class="car-btn">View Details</a>
           </div>
         </div>
-        <!-- Car 6 -->
-        <div class="car-card">
+        <div class="car-card" data-brand="Toyota" data-price="10.7" data-year="2008">
           <div class="car-image">
             <img src="images/toyota_corolla_sport_2008/IMG_2029.jpeg" alt="Toyota Corolla Sport 2008">
+            <div class="tilt-glow"></div>
             <span class="car-badge badge-foreign">Foreign Used</span>
             <span class="car-badge badge-neat">Neat Condition</span>
             <span class="car-badge badge-sold">SOLD</span>
@@ -137,10 +196,10 @@
             <a href="details-toyota-corolla-sport-2008.html" class="car-btn">View Details</a>
           </div>
         </div>
-        <!-- Car 7 -->
-        <div class="car-card">
+        <div class="car-card" data-brand="Toyota" data-price="11.5" data-year="2011">
           <div class="car-image">
             <img src="images/toyota_corolla_sport_2011/IMG_1969.jpeg" alt="Toyota Corolla 2011">
+            <div class="tilt-glow"></div>
             <span class="car-badge badge-foreign">Foreign Used</span>
             <span class="car-badge badge-neat">Neat Condition</span>
           </div>
@@ -150,10 +209,10 @@
             <a href="details-toyota-corolla-2011.html" class="car-btn">View Details</a>
           </div>
         </div>
-        <!-- Car 8 -->
-        <div class="car-card">
+        <div class="car-card" data-brand="Lexus" data-price="9.5" data-year="2008">
           <div class="car-image">
             <img src="images/lexus_is_250_2008/IMG_2057.jpeg" alt="Lexus IS 250 2008">
+            <div class="tilt-glow"></div>
             <span class="car-badge badge-foreign">Foreign Used</span>
             <span class="car-badge badge-neat">Neat Condition</span>
           </div>
@@ -163,10 +222,10 @@
             <a href="details-lexus-is250-2008.html" class="car-btn">View Details</a>
           </div>
         </div>
-        <!-- Car 9 -->
-        <div class="car-card">
+        <div class="car-card" data-brand="Toyota" data-price="18" data-year="2017">
           <div class="car-image">
             <img src="images/toyota_camry_2017/IMG_2003.jpeg" alt="Toyota Camry 2017">
+            <div class="tilt-glow"></div>
             <span class="car-badge badge-foreign">Foreign Used</span>
             <span class="car-badge badge-neat">Neat Condition</span>
           </div>
@@ -176,10 +235,10 @@
             <a href="details-toyota-camry-2017.html" class="car-btn">View Details</a>
           </div>
         </div>
-        <!-- Car 10 -->
-        <div class="car-card">
+        <div class="car-card" data-brand="Toyota" data-price="15" data-year="2014">
           <div class="car-image">
             <img src="images/toyota_corolla_2014/IMG_1982.jpeg" alt="Toyota Corolla 2014">
+            <div class="tilt-glow"></div>
             <span class="car-badge badge-foreign">Foreign Used</span>
             <span class="car-badge badge-neat">Neat Condition</span>
           </div>
@@ -189,10 +248,10 @@
             <a href="details-toyota-corolla-2014.html" class="car-btn">View Details</a>
           </div>
         </div>
-        <!-- Car 11 -->
-        <div class="car-card">
+        <div class="car-card" data-brand="Lexus" data-price="17.5" data-year="2013">
           <div class="car-image">
             <img src="images/lexus_ES_350_2013/IMG_2085.jpeg" alt="Lexus ES 350 2013">
+            <div class="tilt-glow"></div>
             <span class="car-badge badge-foreign">Foreign Used</span>
             <span class="car-badge badge-neat">Neat Condition</span>
           </div>
@@ -202,10 +261,10 @@
             <a href="details-lexus-es350-2013.html" class="car-btn">View Details</a>
           </div>
         </div>
-        <!-- Car 12 -->
-        <div class="car-card">
+        <div class="car-card" data-brand="Nissan" data-price="10.6" data-year="2016">
           <div class="car-image">
             <img src="images/nissan_altima_2016/IMG_2038.jpeg" alt="Nissan Altima 2016">
+            <div class="tilt-glow"></div>
             <span class="car-badge badge-foreign">Foreign Used</span>
             <span class="car-badge badge-neat">Neat Condition</span>
           </div>
@@ -215,10 +274,10 @@
             <a href="details-nissan-altima-2016.html" class="car-btn">View Details</a>
           </div>
         </div>
-        <!-- Car 13 -->
-        <div class="car-card">
+        <div class="car-card" data-brand="Acura" data-price="11" data-year="2013">
           <div class="car-image">
             <img src="images/Akura_2013/IMG_1985.jpeg" alt="Akura 2013">
+            <div class="tilt-glow"></div>
             <span class="car-badge badge-foreign">Foreign Used</span>
             <span class="car-badge badge-neat">Neat Condition</span>
             <span class="car-badge badge-sold">SOLD</span>
@@ -230,6 +289,8 @@
           </div>
         </div>
       </div>
+      <div class="no-results" id="noResults" style="display:none;">No cars match your filters. Try resetting.</div>
+      <div class="pagination" id="pagination"></div>
     </div>
   </section>
 
@@ -252,19 +313,26 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <img src="./images/Thadef.png" alt="THADEF AUTOS" class="footer-logo">
-          <p>Your trusted dealer for clean foreign used cars. Quality vehicles at competitive prices.</p>
+          <p>Your trusted dealer for clean foreign used cars. Direct imports from Canada, delivered nationwide.</p>
+          <form class="footer-newsletter" id="footerNewsletter" onsubmit="return false;">
+            <input type="email" class="newsletter-input" id="footerEmail" placeholder="Subscribe for new arrivals" required style="margin-bottom:14px;">
+            <button type="submit" class="btn btn-outline" style="width:100%;">Subscribe</button>
+          </form>
+          <p class="newsletter-msg" id="footerNewsletterMsg" style="text-align:left;"></p>
         </div>
         <div class="footer-contact">
           <h3>Contact Us</h3>
           <a href="tel:+2348034768934">📞 08034768934</a>
           <a href="tel:+2349063885910">📞 09063885910</a>
           <a href="https://wa.me/2349110138677">💬 WhatsApp: 09110138677</a>
+          <a href="mailto:thadefautos@gmail.com">✉️ thadefautos@gmail.com</a>
         </div>
         <div class="footer-social">
           <h3>Follow Us</h3>
           <p>@ThadefAutos</p>
           <div class="social-links">
             <a href="https://instagram.com/thadefautos" class="social-link" target="_blank">IG</a>
+            <a href="https://wa.me/2349110138677" class="social-link" target="_blank">WA</a>
           </div>
         </div>
       </div>
@@ -279,69 +347,178 @@
     <a href="https://wa.me/2349110138677" target="_blank">💬</a>
   </div>
 
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
   <script>
-    // Filter cars by search
-    function filterCars() {
-      const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-      const cards = document.querySelectorAll('.car-card');
-      
-      cards.forEach(card => {
+    // ===== Preloader =====
+    const preEl = document.getElementById('preloader');
+    window.addEventListener('load', () => {
+      setTimeout(() => { if (preEl) preEl.classList.add('hide'); }, 500);
+    });
+
+    // ===== Scroll Progress + Back to Top =====
+    const scrollProgress = document.getElementById('scrollProgress');
+    const backToTop = document.getElementById('backToTop');
+    function onScroll() {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      scrollProgress.style.width = pct + '%';
+      backToTop.classList.toggle('show', scrollTop > 500);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // ===== Filters + Pagination =====
+    const cards = Array.from(document.querySelectorAll('#carGrid .car-card'));
+    const PER_PAGE = 6;
+    let currentPage = 1;
+    let filtered = cards.slice();
+
+    const searchInput = document.getElementById('searchInput');
+    const brandSel = document.getElementById('filterBrand');
+    const priceSel = document.getElementById('filterPrice');
+    const yearSel = document.getElementById('filterYear');
+    const resetBtn = document.getElementById('filterReset');
+    const resultsCount = document.getElementById('resultsCount');
+    const noResults = document.getElementById('noResults');
+    const paginationEl = document.getElementById('pagination');
+
+    function getFiltered() {
+      const term = searchInput.value.toLowerCase().trim();
+      const brand = brandSel.value;
+      const price = priceSel.value;
+      const year = yearSel.value;
+      return cards.filter(card => {
         const title = card.querySelector('.car-title').textContent.toLowerCase();
-        if (title.includes(searchTerm)) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
+        const cBrand = card.dataset.brand;
+        const cPrice = parseFloat(card.dataset.price);
+        const cYear = card.dataset.year;
+        if (term && !title.includes(term)) return false;
+        if (brand && cBrand !== brand) return false;
+        if (year && cYear !== year) return false;
+        if (price) {
+          const [min, max] = price.split('-').map(Number);
+          if (cPrice < min || cPrice > max) return false;
         }
+        return true;
       });
     }
 
-    document.getElementById('searchInput').addEventListener('keyup', filterCars);
+    function render() {
+      filtered.forEach(c => c.style.display = 'none');
+      const total = filtered.length;
+      const pages = Math.max(1, Math.ceil(total / PER_PAGE));
+      if (currentPage > pages) currentPage = pages;
+      const start = (currentPage - 1) * PER_PAGE;
+      const pageItems = filtered.slice(start, start + PER_PAGE);
+      pageItems.forEach(c => c.style.display = 'block');
+      noResults.style.display = total === 0 ? 'block' : 'none';
+      resultsCount.innerHTML = 'Showing <strong>' + pageItems.length + '</strong> of <strong>' + total + '</strong> cars';
+      renderPagination(pages);
+      observeCards();
+    }
 
-    // Intersection Observer for card animations
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
+    function renderPagination(pages) {
+      paginationEl.innerHTML = '';
+      if (pages <= 1) return;
+      const prev = document.createElement('button');
+      prev.className = 'page-btn' + (currentPage === 1 ? ' disabled' : '');
+      prev.textContent = '‹';
+      prev.addEventListener('click', () => { if (currentPage > 1) { currentPage--; render(); } });
+      paginationEl.appendChild(prev);
+      for (let i = 1; i <= pages; i++) {
+        const b = document.createElement('button');
+        b.className = 'page-btn' + (i === currentPage ? ' active' : '');
+        b.textContent = i;
+        b.addEventListener('click', () => { currentPage = i; render(); });
+        paginationEl.appendChild(b);
+      }
+      const next = document.createElement('button');
+      next.className = 'page-btn' + (currentPage === pages ? ' disabled' : '');
+      next.textContent = '›';
+      next.addEventListener('click', () => { if (currentPage < pages) { currentPage++; render(); } });
+      paginationEl.appendChild(next);
+    }
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            entry.target.classList.add('visible');
-          }, index * 100);
-        }
-      });
-    }, observerOptions);
+    function applyFilters() {
+      currentPage = 1;
+      filtered = getFiltered();
+      render();
+    }
 
-    document.querySelectorAll('.car-card').forEach(card => {
-      observer.observe(card);
+    [brandSel, priceSel, yearSel].forEach(sel => sel.addEventListener('change', applyFilters));
+    searchInput.addEventListener('keyup', applyFilters);
+    resetBtn.addEventListener('click', () => {
+      searchInput.value = '';
+      brandSel.value = '';
+      priceSel.value = '';
+      yearSel.value = '';
+      applyFilters();
     });
 
-    // Mobile navigation
+    // ===== Card reveal + 3D tilt =====
+    let cardObserver;
+    function observeCards() {
+      if (!cardObserver) {
+        cardObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) { entry.target.classList.add('visible'); cardObserver.unobserve(entry.target); }
+          });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+      }
+      document.querySelectorAll('#carGrid .car-card[style*="display: block"]').forEach(el => cardObserver.observe(el));
+    }
+
+    document.querySelectorAll('#carGrid .car-card').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left, y = e.clientY - rect.top;
+        const cx = rect.width / 2, cy = rect.height / 2;
+        card.style.transform = `perspective(900px) rotateX(${((y - cy) / cy) * -6}deg) rotateY(${((x - cx) / cx) * 6}deg) translateY(-12px)`;
+        card.style.setProperty('--mx', (x / rect.width * 100) + '%');
+        card.style.setProperty('--my', (y / rect.height * 100) + '%');
+      });
+      card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+    });
+
+    // ===== Newsletter (WhatsApp deep-link) =====
+    const WA_NUMBER = '2349110138677';
+    const fForm = document.getElementById('footerNewsletter');
+    const fMsg = document.getElementById('footerNewsletterMsg');
+    fForm.addEventListener('submit', () => {
+      const email = fForm.querySelector('input').value;
+      if (!email) return;
+      fMsg.textContent = '✓ Opening WhatsApp to confirm your subscription...';
+      window.open('https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent('Hello THADEF AUTOS, I would like to subscribe to your new car arrivals.\nEmail: ' + email), '_blank');
+      fForm.reset();
+      setTimeout(() => { fMsg.textContent = '✓ Subscribed! Confirm with us on WhatsApp.'; }, 1500);
+    });
+
+    // ===== Mobile navigation =====
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks = document.getElementById('primaryNav');
     const navBackdrop = document.getElementById('navBackdrop');
-
     function closeNav() {
       navLinks.classList.remove('open');
       navBackdrop.classList.remove('show');
       navToggle.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
     }
-
     function toggleNav() {
       const isOpen = navLinks.classList.toggle('open');
       navBackdrop.classList.toggle('show', isOpen);
       navToggle.setAttribute('aria-expanded', String(isOpen));
       document.body.style.overflow = isOpen ? 'hidden' : '';
     }
-
     navToggle.addEventListener('click', toggleNav);
     navBackdrop.addEventListener('click', closeNav);
     navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', closeNav));
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeNav();
-    });
-   </script>
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeNav(); });
+
+    // Init
+    applyFilters();
+  </script>
 </body>
 </html>
